@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<QuestionBank>
+<QuestionBank players="3">
 
     <Question id="1" answerid="1">
         <text>Who invented the Ballpoint Pen?</text>

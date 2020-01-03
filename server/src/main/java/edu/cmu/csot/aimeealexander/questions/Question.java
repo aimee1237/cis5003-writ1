@@ -1,28 +1,30 @@
 package edu.cmu.csot.aimeealexander.questions;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlID;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @JsonPropertyOrder({"text,answers"})
-public class Question implements Comparable {
+public class Question implements Comparable<Question> {
 
-    @XmlAttribute(name = "id")
-    @XmlID
+    @JacksonXmlProperty(isAttribute = true)
     Integer id;
 
-    @XmlAttribute(name = "answerid")
-    @XmlID
+    @JacksonXmlProperty(isAttribute = true, localName = "answerid")
     Integer answerId;
 
     String text;
+
+    @JacksonXmlElementWrapper(localName = "answers")
+    @JacksonXmlProperty(localName = "option")
     Set<Answer> answers;
 
-    public Question(Integer id, Integer answerId, String text, Set<Answer> answers) {
+    public Question(){
+    }
+
+    public Question(Integer id, String text, Integer answerId,  Set<Answer> answers) {
         this.id = id;
         this.answerId = answerId;
         this.text = text;
@@ -62,7 +64,7 @@ public class Question implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Question other){
+        return Integer.compare(this.id, other.id);
     }
 }

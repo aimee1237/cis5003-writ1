@@ -1,22 +1,23 @@
 package edu.cmu.csot.aimeealexander.questions;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlID;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
 
-public class Answer implements Comparable {
+public class Answer implements Comparable<Answer> {
 
-    @XmlAttribute(name = "id")
-    @XmlID
+    @JacksonXmlProperty(isAttribute = true)
     Integer id;
 
-    @XmlElement
-    String option;
+    @JacksonXmlText
+    String text;
 
-    public Answer(Integer id, String option) {
+    public Answer(){
+    }
+
+    public Answer(Integer id, String text) {
         this.id = id;
-        this.option = option;
+        this.text = text;
     }
 
     public Integer getId() {
@@ -27,16 +28,16 @@ public class Answer implements Comparable {
         this.id = id;
     }
 
-    public String getOption() {
-        return option;
+    public String getText() {
+        return text;
     }
 
-    public void setOption(String option) {
-        this.option = option;
+    public void setText(String text) {
+        this.text = text;
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Answer other){
+        return Integer.compare(this.id, other.id);
     }
 }
