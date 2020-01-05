@@ -1,15 +1,0 @@
-
-T
-squid:S106'"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
-[squid:S1854!"DRemove this useless assignment to local variable "deserializedData".(àÎĞÃ
-bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¥Éä«
-asquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(¹ß%
-O
-squid:S106F"9Replace this use of System.out or System.err by a logger.(ß÷éÏ
-?squid:S1148?"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-T
-squid:S106B"9Replace this use of System.out or System.err by a logger.(á±Çäûÿÿÿÿ
-N
-squid:S106$"9Replace this use of System.out or System.err by a logger.(¦Ìã
-Rsquid:UselessImportCheck")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ
-Lsquid:S1481!"5Remove this unused "deserializedData" local variable.(àÎĞÃ
