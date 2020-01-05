@@ -6,6 +6,7 @@ import edu.cmu.csot.aimeealexander.server.Server;
 
 import java.io.*;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,39 +27,49 @@ public class GameServer {
         }
 
         //Read the game-script
-        String gameScriptXml = readGameScript(inputFile);
-        XmlMapper xmlMapper = new XmlMapper();
-        QuestionBank questionBank = xmlMapper.readValue(gameScriptXml, QuestionBank.class);
+        QuestionBank questionBank = loadQuestionBank(inputFile);
 
-        ServerSocket serverSocket = null;
-        try {
-            serverSocket = new ServerSocket(serverPort);
-            int connectedPlayers = 0;
-
-            List<Server> serverConnections = new ArrayList<>();
-            while (connectedPlayers < questionBank.getPlayers()) {
-                // Creates a new SocketServer object for each connection this will allow multiple client connections
-                serverConnections.add(new Server(serverSocket.accept()));
-                connectedPlayers += 1;
-                System.out.println(connectedPlayers + " players");
-            }
-
-            for (Server clientConnection : serverConnections) {
-                clientConnection.start();
-            }
-
-
-        } catch (IOException ex) {
-            System.out.println("Failed to start server");
-        } finally {
+        if (questionBank!=null && questionBank.getPlayers() > 0 && questionBank.getQuestions().size()>0 ) {
+            ServerSocket serverSocket = null;
             try {
-                if (serverSocket != null)
-                    serverSocket.close();
+                serverSocket = new ServerSocket(serverPort);
+                int connectedPlayers = 0;
+
+                List<Server> serverConnections = new ArrayList<>();
+                System.out.println("-> This game has " +  questionBank.getQuestions().size() +" questions for " + questionBank.getPlayers() +" players");
+                while (connectedPlayers < questionBank.getPlayers()) {
+                    // Creates a new SocketServer object for each connection this will allow multiple client connections
+                    Socket socket = serverSocket.accept();
+                    Server server = new Server(socket);
+
+                    serverConnections.add(server);
+                    connectedPlayers += 1;
+                    System.out.println("--> " + connectedPlayers + " of " + questionBank.getPlayers() + " players connected from " + socket.getInetAddress().getHostAddress());
+                }
+
+                System.out.println("\n-> Starting game");
+                //for (Server clientConnection : serverConnections) {
+                //    clientConnection.start();
+               // }
+
             } catch (IOException ex) {
-                ex.printStackTrace();
+                System.out.println("Failed to start server");
+            } finally {
+                try {
+                    if (serverSocket != null)
+                        serverSocket.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         }
 
+    }
+
+    private static QuestionBank loadQuestionBank(String inputFile) throws IOException {
+        String gameScriptXml = readGameScript(inputFile);
+        XmlMapper xmlMapper = new XmlMapper();
+        return xmlMapper.readValue(gameScriptXml, QuestionBank.class);
     }
 
 

@@ -1,12 +1,27 @@
 package edu.cmu.csot.aimeealexander.player;
 
-public class Person {
+import edu.cmu.csot.aimeealexander.questions.Answer;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Player {
 
     String firstName;
     String lastName;
     Integer age;
 
-    public Person() {
+    Map<Integer, Integer> answers = new LinkedHashMap<>();
+
+    public final static String[] FIELDS = new String[]{"first name", "last name", "age"};
+
+    public Player() {
+    }
+
+    public Player(String firstName, String lastName, Integer age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
     }
 
     public String getFirstName() {

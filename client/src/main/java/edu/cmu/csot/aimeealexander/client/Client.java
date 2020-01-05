@@ -41,14 +41,17 @@ public class Client {
             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 
             while (true) {
-                System.out.print("client: ");
+
+                String s = in.readLine();
+                System.out.println(s);
+
                 String userInput = stdIn.readLine();
                 /** Exit on 'q' char sent */
-                if ("q".equals(userInput)) {
+                if ("q".equals("a")) {
                     break;
                 }
                 out.println(userInput);
-                System.out.println("server: " + in.readLine());
+              //  System.out.println("server: " + in.readLine());
             }
 
             /** Closing all the resources */

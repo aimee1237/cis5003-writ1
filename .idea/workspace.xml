@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5b4aa7c0-e3f8-484c-9430-7ffb23a4dfa2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_module_jackson_module_paranamer_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_woodstox_woodstox_core_6_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thoughtworks_paranamer_paranamer_2_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_1_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_codehaus_woodstox_stax2_api_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/client/cis5003-writ1.client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/client/cis5003-writ1.client.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/client/cis5003-writ1.client.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/edu.cmu.csot.aimeealexander.cis5003-writ1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/edu.cmu.csot.aimeealexander.cis5003-writ1.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/edu.cmu.csot.aimeealexander.cis5003-writ1.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/server/cis5003-writ1.server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/server/cis5003-writ1.server.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/server/cis5003-writ1.server.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1bc5f90086d9eccd69193dce66d0a816d540dcdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83ba4f18e671382caa775be85616d8227cc34968" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a96b5926ec8032ce38f724f3e6e6728ae197f22f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/1/f1fcbcd098aa73c42796122551e1286c09efd003" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f790795feb0a10a9033f95ae480a484baf60b405" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/edu/cmu/csot/aimeealexander/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/edu/cmu/csot/aimeealexander/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/player/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/server/Server.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/client">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cis5003-writ1" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cis5003-writ1" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cis5003-writ1" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="cis5003-writ1" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1VsqvArrDW0oKX950msE6y92NFM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575976979405" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.TFS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\aimee\cis5003-writ1\server\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.cis5003-writ1:client [clean]">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.cmu.csot.aimeealexander.client.Client" />
+      <module name="cis5003-writ1.client.main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.cmu.csot.aimeealexander.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.cmu.csot.aimeealexander.GameServer" />
+      <module name="cis5003-writ1.server.main" />
+      <option name="PROGRAM_PARAMETERS" value="C://CodeRepository//Application//aimee//game-script.xml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.cmu.csot.aimeealexander.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cis5003-writ1:client [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="cis5003-writ1:server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="cis5003-writ1:server [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.GameServer" />
+      <item itemvalue="Gradle.cis5003-writ1:client [clean]" />
+      <item itemvalue="Gradle.cis5003-writ1:server [clean]" />
+      <item itemvalue="Gradle.cis5003-writ1:server [build]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.cis5003-writ1:server [build]" />
+        <item itemvalue="Gradle.cis5003-writ1:server [clean]" />
+        <item itemvalue="Gradle.cis5003-writ1:client [clean]" />
+        <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.Client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\700870538\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b4aa7c0-e3f8-484c-9430-7ffb23a4dfa2" name="Default Changelist" comment="" />
+      <created>1575928461628</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575928461628</updated>
+      <workItem from="1575928473174" duration="6686000" />
+      <workItem from="1575969855812" duration="650000" />
+      <workItem from="1575976734809" duration="262000" />
+      <workItem from="1578052383427" duration="14058000" />
+      <workItem from="1578086101775" duration="2315000" />
+      <workItem from="1578088830580" duration="5034000" />
+      <workItem from="1578093920303" duration="1262000" />
+      <workItem from="1578170455236" duration="2035000" />
+      <workItem from="1578172764608" duration="2007000" />
+      <workItem from="1578174950580" duration="339000" />
+      <workItem from="1578175569071" duration="1912000" />
+      <workItem from="1578257106279" duration="7778000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added game script classes for XML deserialisation&#10;Added basic server and client">
+      <created>1578094455274</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578094455275</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added game script classes for XML deserialisation&#10;Added basic server and client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added game script classes for XML deserialisation&#10;Added basic server and client" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="73" key="#Project_Structure" timestamp="1578052870490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="73" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1578052870490" />
+    <state x="495" y="80" width="559" height="664" key="#Server" timestamp="1578074675466">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="495" y="80" width="559" height="664" key="#Server/0.0.1536.824@0.0.1536.824" timestamp="1578074675466" />
+    <state x="223" y="69" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578093197765">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="69" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1578093197765" />
+    <state x="574" y="104" key="#com.intellij.ide.util.MemberChooser" timestamp="1578259194577">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="104" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1578259194577" />
+    <state x="367" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578076589677">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="367" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1578076589677" />
+    <state x="291" y="10" key="CommitChangelistDialog2" timestamp="1578094454231">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="291" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578094454231" />
+    <state width="1493" height="284" key="GridCell.Tab.0.bottom" timestamp="1578265071266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="284" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578265071266" />
+    <state width="1493" height="284" key="GridCell.Tab.0.center" timestamp="1578265071266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="284" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578265071266" />
+    <state width="1493" height="284" key="GridCell.Tab.0.left" timestamp="1578265071266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="284" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578265071266" />
+    <state width="1493" height="284" key="GridCell.Tab.0.right" timestamp="1578265071266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="284" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578265071266" />
+    <state width="1493" height="267" key="GridCell.Tab.1.bottom" timestamp="1578265048981">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="267" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578265048981" />
+    <state width="1493" height="267" key="GridCell.Tab.1.center" timestamp="1578265048981">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="267" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1578265048981" />
+    <state width="1493" height="267" key="GridCell.Tab.1.left" timestamp="1578265048981">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="267" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1578265048981" />
+    <state width="1493" height="267" key="GridCell.Tab.1.right" timestamp="1578265048981">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="267" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1578265048981" />
+    <state x="361" y="147" key="Vcs.Push.Dialog.v2" timestamp="1578094487446">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1578094487446" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1578078001985">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1578078001985" />
+    <state x="499" y="174" key="extract.method.dialog" timestamp="1578170592147">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="174" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1578170592147" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/test/java/edu/cmu/csot/aimeealexander/questions/QuestionTests.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/GameServer.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/edu/cmu/csot/aimeealexander/client/Client.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/edu/cmu/csot/aimeealexander/client/Client.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/edu/cmu/csot/aimeealexander/client/Client.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/edu/cmu/csot/aimeealexander/server/Server.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
