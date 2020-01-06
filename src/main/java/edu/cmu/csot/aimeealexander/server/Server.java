@@ -56,8 +56,9 @@ public class Server extends Thread {
             //Wait for all clients to get to this point before starting the game
             if (cyclicBarrier.getNumberWaiting() < cyclicBarrier.getParties() - 1) {
                 sendSimpleMessage(new SimpleMessageAction("Waiting for other players to join and register before starting game"));
-                cyclicBarrier.await();
             }
+
+            cyclicBarrier.await();
 
             //Start the game
             sendSimpleMessage(new SimpleMessageAction("\n++ Starting the game ++\n"));
