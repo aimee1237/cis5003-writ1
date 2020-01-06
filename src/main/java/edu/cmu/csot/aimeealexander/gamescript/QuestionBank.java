@@ -5,6 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -13,7 +14,7 @@ public class QuestionBank implements Serializable {
 
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "Question")
-    Set<Question> questions;
+    TreeSet<Question> questions;
 
     @JacksonXmlProperty(isAttribute = true)
     Integer players;
@@ -37,7 +38,7 @@ public class QuestionBank implements Serializable {
         return questions;
     }
 
-    public void setQuestions(Set<Question> questions) {
+    public void setQuestions(TreeSet<Question> questions) {
         this.questions = questions;
     }
 }

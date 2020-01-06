@@ -41,7 +41,6 @@ public class GameServer {
                 serverSocket = new ServerSocket(serverPort);
                 int connectedPlayers = 0;
 
-
                 List<Server> serverConnections = new ArrayList<>();
                 System.out.println("-> This game has " + questionBank.getQuestions().size() + " questions for " + questionBank.getPlayers() + " players");
                 while (connectedPlayers < questionBank.getPlayers()) {
@@ -83,12 +82,10 @@ public class GameServer {
 
 
     static String readGameScript(String gameScript) throws IOException {
-
         File gameScriptFile = new File(gameScript);
         if (gameScriptFile.exists() && gameScriptFile.isFile()) {
             InputStream inputStream = new FileInputStream(gameScriptFile);
             return inputStreamToString(inputStream);
-
         }
         return null;
     }

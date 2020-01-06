@@ -5,7 +5,9 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 @JsonPropertyOrder({"text,answers"})
 public class Question implements Comparable<Question>, Serializable {
@@ -20,12 +22,12 @@ public class Question implements Comparable<Question>, Serializable {
 
     @JacksonXmlElementWrapper(localName = "answers")
     @JacksonXmlProperty(localName = "option")
-    Set<Answer> answers;
+    TreeSet<Answer> answers;
 
     public Question(){
     }
 
-    public Question(Integer id, String text, Integer answerId,  Set<Answer> answers) {
+    public Question(Integer id, String text, Integer answerId,  TreeSet<Answer> answers) {
         this.id = id;
         this.answerId = answerId;
         this.text = text;
@@ -56,11 +58,11 @@ public class Question implements Comparable<Question>, Serializable {
         this.text = text;
     }
 
-    public Set<Answer> getAnswers() {
+    public TreeSet<Answer> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(Set<Answer> answers) {
+    public void setAnswers(TreeSet<Answer> answers) {
         this.answers = answers;
     }
 

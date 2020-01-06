@@ -7,11 +7,22 @@ public class Player {
 
     String firstName;
     String lastName;
-    Integer age;
+    int age;
+    int score = 0;
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public Map<Integer, Integer> getAnswers() {
+        return answers;
+    }
 
     Map<Integer, Integer> answers = new LinkedHashMap<>();
-
-    public final static String[] FIELDS = new String[]{"first name", "last name", "age"};
 
     public Player() {
     }
@@ -38,11 +49,11 @@ public class Player {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }

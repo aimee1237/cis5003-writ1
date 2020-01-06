@@ -1,5 +1,6 @@
 package edu.cmu.csot.aimeealexander.client;
 
+import edu.cmu.csot.aimeealexander.server.Server;
 import edu.cmu.csot.aimeealexander.server.actions.ClientAction;
 
 import java.io.*;
@@ -7,26 +8,19 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client {
-
-    public static final String MESSAGE_PREFIX = "M:";
-    public static final String QUESTION_PREFIX = "Q:";
-    public  static  final  String GAME_OVER = "GAME OVER";
-
+    public static final String DEFAULT_HOST_IP = "127.0.0.1";
     public static void main(String args[]) {
-        String host = "127.0.0.1";
-        int port = 8081;
-        new Client(host, port);
+        new Client(DEFAULT_HOST_IP, Server.DEFAULT_PORT_NUMBER);
     }
 
     public Client(String host, int port) {
         try {
-            String serverHostname = new String("127.0.0.1");
+            String serverHostname = new String(host);
 
-            System.out.println("Connecting to host " + serverHostname + " on port " + port + ".");
+            System.out.println("Connecting to host " + serverHostname + " on port " + port);
 
             Socket echoSocket = null;
             PrintWriter out = null;
-            //BufferedReader in = null;
             ObjectInputStream in = null;
 
             try {
@@ -48,7 +42,7 @@ public class Client {
                 ClientAction serverMessage = (ClientAction) in.readObject();
                 serverMessage.doAction(stdIn, out);
 
-                if (serverMessage == null){
+                if (serverMessage.terminate()){
                     break;
                 }
             }

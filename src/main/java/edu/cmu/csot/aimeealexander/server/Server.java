@@ -1,12 +1,10 @@
 package edu.cmu.csot.aimeealexander.server;
 
+import edu.cmu.csot.aimeealexander.client.Client;
 import edu.cmu.csot.aimeealexander.gamescript.Question;
 import edu.cmu.csot.aimeealexander.gamescript.QuestionBank;
 import edu.cmu.csot.aimeealexander.player.Player;
-import edu.cmu.csot.aimeealexander.server.actions.ClientAction;
-import edu.cmu.csot.aimeealexander.server.actions.QuestionBankAction;
-import edu.cmu.csot.aimeealexander.server.actions.SimpleMessageAction;
-import edu.cmu.csot.aimeealexander.server.actions.SimpleQuestionAction;
+import edu.cmu.csot.aimeealexander.server.actions.*;
 
 import java.io.*;
 import java.net.Socket;
@@ -15,8 +13,6 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Server extends Thread {
     public static final int DEFAULT_PORT_NUMBER = 8081;
-    public static final String MESSAGE_PREFIX = "M:";
-    public static final String QUESTION_PREFIX = "Q:";
     protected Socket socket;
 
     protected final CyclicBarrier cyclicBarrier;
@@ -40,37 +36,46 @@ public class Server extends Thread {
             oos = new ObjectOutputStream(out);
 
             //Initial greeting to the player
-            sendSimpleMessage(oos,"Welcome to the GAME.  This game will be for " + questionBank.getPlayers() + "player(s)");
+            sendSimpleMessage(oos,new SimpleMessageAction("Welcome to the GAME.  This game will be for " + questionBank.getPlayers() + "player(s)"));
 
             //Capture the players details
             ClientAction firstNameAction = new SimpleQuestionAction("Enter your first name:");
-            String firstName = sendQuestion(in,oos,firstNameAction);
+            String firstName = sendMessageAndGetResponse(in,oos,firstNameAction);
 
             ClientAction lastNameAction = new SimpleQuestionAction("Enter your last name:");
-            String lastName = sendQuestion(in,oos,lastNameAction);
+            String lastName = sendMessageAndGetResponse(in,oos,lastNameAction);
 
             ClientAction ageAction = new SimpleQuestionAction("Enter your age:");
-            String age = sendQuestion(in,oos,firstNameAction);
+            String age = sendMessageAndGetResponse(in,oos,ageAction);
 
             Player player = new Player(firstName,lastName, Integer.valueOf(age));
-
-
 
             //Wait for all clients to get to this point before starting the game
             if (cyclicBarrier.getNumberWaiting() < cyclicBarrier.getParties()-1){
                 cyclicBarrier.await();
-                sendSimpleMessage(oos,"Waiting for other players to get to join before starting game");
+                sendSimpleMessage(oos,new SimpleMessageAction("Waiting for other players to get to join before starting game"));
             }
 
-            sendSimpleMessage(oos,"Waiting for other players to get to join before starting game");
+            sendSimpleMessage(oos,new SimpleMessageAction("\n++ Starting the game ++\n"));
+
 
             //Send the game questions and options
             for (Question question:questionBank.getQuestions()){
                 ClientAction questionBankAction = new QuestionBankAction(question);
-                String response = sendQuestion(in,oos,questionBankAction);
-                System.out.println(question.getId() + ") You entered :" + response);
+                String response = sendMessageAndGetResponse(in,oos,questionBankAction);
+
+                //Record the result
+                player.getAnswers().put(question.getId(),Integer.valueOf(response) );
+                if (Integer.valueOf(response) == question.getAnswerId()){
+                    player.setScore(player.getScore()+1);
+                }
             }
 
+            sendSimpleMessage(oos, new SimpleMessageAction("You scored " + player.getScore() +
+                    " out of " + questionBank.getQuestions().size()));
+
+            //Disconnect the client from the game
+            sendSimpleMessage(oos, new EndGameAction());
 
         } catch (IOException | InterruptedException | BrokenBarrierException e) {
             System.out.println("Unable to get streams from client");
@@ -86,12 +91,11 @@ public class Server extends Thread {
         }
     }
 
-    private void sendSimpleMessage(ObjectOutputStream oos, String message) throws IOException {
-        ClientAction action = new SimpleMessageAction(message);
+    private void sendSimpleMessage(ObjectOutputStream oos, ClientAction action) throws IOException {
         oos.writeObject(action);
     }
 
-    private String sendQuestion(InputStream in, ObjectOutputStream oos, ClientAction action) throws IOException {
+    private String sendMessageAndGetResponse(InputStream in, ObjectOutputStream oos, ClientAction action) throws IOException {
         oos.writeObject(action);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String response = br.readLine();
