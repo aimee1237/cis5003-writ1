@@ -15,16 +15,19 @@ import java.util.concurrent.CyclicBarrier;
 
 public class GameServer {
 
+    public static final String DEFAULT_HOST_IP = "127.0.0.1";
+    public static final int DEFAULT_PORT_NUMBER = 8081;
+
     public static void main(String args[]) throws IOException, BrokenBarrierException, InterruptedException {
 
-        int serverPort = Server.DEFAULT_PORT_NUMBER;
+        int serverPort = DEFAULT_PORT_NUMBER;
         String inputFile = "";
 
         if (args.length == 1) {
             inputFile = args[0];
         } else if (args.length == 2) {
-            serverPort = Integer.valueOf(args[1]);
             inputFile = args[0];
+            serverPort = Integer.valueOf(args[1]);
         } else {
             System.exit(1);
         }

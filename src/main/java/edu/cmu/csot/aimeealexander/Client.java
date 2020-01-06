@@ -8,9 +8,22 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client {
-    public static final String DEFAULT_HOST_IP = "127.0.0.1";
+
     public static void main(String args[]) {
-        new Client(DEFAULT_HOST_IP, Server.DEFAULT_PORT_NUMBER);
+
+        String hostIp = GameServer.DEFAULT_HOST_IP;
+        int serverPort = GameServer.DEFAULT_PORT_NUMBER;
+
+        if (args.length == 1) {
+            hostIp = args[0];
+        } else if (args.length == 2) {
+            hostIp = args[0];
+            serverPort = Integer.valueOf(args[1]);
+        } else if (args.length > 2){
+            System.exit(1);
+        }
+
+        new Client(hostIp, serverPort);
     }
 
     public Client(String host, int port) {
@@ -24,7 +37,7 @@ public class Client {
             ObjectInputStream in = null;
 
             try {
-                echoSocket = new Socket(serverHostname, 8081);
+                echoSocket = new Socket(serverHostname, port);
                 out = new PrintWriter(echoSocket.getOutputStream(), true);
                 in = new ObjectInputStream(echoSocket.getInputStream());
             } catch (UnknownHostException e) {

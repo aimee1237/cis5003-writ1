@@ -11,7 +11,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class Server extends Thread {
-    public static final int DEFAULT_PORT_NUMBER = 8081;
+
     protected Socket socket;
 
     protected final CyclicBarrier cyclicBarrier;
