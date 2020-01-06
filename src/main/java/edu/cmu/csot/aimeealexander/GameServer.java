@@ -15,8 +15,6 @@ import java.util.concurrent.CyclicBarrier;
 
 public class GameServer {
 
-    public static int PORT_NUMBER;
-
     public static void main(String args[]) throws IOException, BrokenBarrierException, InterruptedException {
 
         int serverPort = Server.DEFAULT_PORT_NUMBER;
@@ -30,7 +28,6 @@ public class GameServer {
         } else {
             System.exit(1);
         }
-        PORT_NUMBER = serverPort;
 
         //Read the game-script
         QuestionBank questionBank = loadQuestionBank(inputFile);
