@@ -1,16 +1,15 @@
-package edu.cmu.csot.aimeealexander.questions;
+package edu.cmu.csot.aimeealexander.gamescript;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-import javax.xml.bind.annotation.XmlElement;
-import java.util.Map;
+import java.io.Serializable;
 import java.util.Set;
 import java.util.TreeSet;
 
 @JsonPropertyOrder({"questions"})
-public class QuestionBank {
+public class QuestionBank implements Serializable {
 
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "Question")

@@ -1,7 +1,5 @@
 package edu.cmu.csot.aimeealexander.player;
 
-import edu.cmu.csot.aimeealexander.questions.Answer;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 

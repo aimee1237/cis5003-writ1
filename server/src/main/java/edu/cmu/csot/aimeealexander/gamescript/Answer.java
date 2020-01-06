@@ -1,10 +1,12 @@
-package edu.cmu.csot.aimeealexander.questions;
+package edu.cmu.csot.aimeealexander.gamescript;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
+import java.io.Serializable;
 
-public class Answer implements Comparable<Answer> {
+
+public class Answer implements Comparable<Answer>, Serializable {
 
     @JacksonXmlProperty(isAttribute = true)
     Integer id;

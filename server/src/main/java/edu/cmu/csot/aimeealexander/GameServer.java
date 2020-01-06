@@ -1,7 +1,7 @@
 package edu.cmu.csot.aimeealexander;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import edu.cmu.csot.aimeealexander.questions.QuestionBank;
+import edu.cmu.csot.aimeealexander.gamescript.QuestionBank;
 import edu.cmu.csot.aimeealexander.server.Server;
 
 import java.io.*;
@@ -47,7 +47,7 @@ public class GameServer {
                 while (connectedPlayers < questionBank.getPlayers()) {
                     // Creates a new SocketServer object for each connection this will allow multiple client connections
                     Socket socket = serverSocket.accept();
-                    Server server = new Server(socket, cyclicBarrier);
+                    Server server = new Server(socket, cyclicBarrier, questionBank);
 
                     serverConnections.add(server);
                     connectedPlayers += 1;
