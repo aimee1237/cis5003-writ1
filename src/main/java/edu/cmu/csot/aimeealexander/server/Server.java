@@ -37,7 +37,9 @@ public class Server extends Thread {
             oos = new ObjectOutputStream(out);
 
             //Initial greeting to the player
-            sendSimpleMessage(new SimpleMessageAction("Welcome to the GAME.  This game will be for " + questionBank.getPlayers() + " player(s)"));
+            sendSimpleMessage(new SimpleMessageAction("+ Welcome to the GAME + \nThis game will be for "
+                        + questionBank.getPlayers() + " player(s)\n"
+                        + "Complete the following registration before starting the game"));
 
             //Capture the players details
             ClientAction firstNameAction = new SimpleQuestionAction("Enter your first name:");
@@ -53,7 +55,7 @@ public class Server extends Thread {
 
             //Wait for all clients to get to this point before starting the game
             if (cyclicBarrier.getNumberWaiting() < cyclicBarrier.getParties() - 1) {
-                sendSimpleMessage(new SimpleMessageAction("Waiting for other players to get to join before starting game"));
+                sendSimpleMessage(new SimpleMessageAction("Waiting for other players to join and register before starting game"));
                 cyclicBarrier.await();
             }
 
