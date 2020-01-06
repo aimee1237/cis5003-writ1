@@ -9,6 +9,10 @@ import java.net.UnknownHostException;
 
 public class Client {
 
+    public static final String MESSAGE_PREFIX = "M:";
+    public static final String QUESTION_PREFIX = "Q:";
+    public  static  final  String GAME_OVER = "GAME OVER";
+
     public static void main(String args[]) {
         String host = "127.0.0.1";
         int port = 8081;
@@ -37,24 +41,24 @@ public class Client {
                 System.exit(1);
             }
 
-            /** {@link UnknownHost} object used to read from console */
             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
-
             while (true) {
 
                 String s = in.readLine();
-                System.out.println(s);
 
-                String userInput = stdIn.readLine();
-                /** Exit on 'q' char sent */
-                if ("q".equals("a")) {
+                if (s.startsWith(QUESTION_PREFIX)){
+                    System.out.println(s.substring(QUESTION_PREFIX.length()));
+                    String userInput = stdIn.readLine();
+                    out.println(userInput);
+
+                } else if (s.startsWith(MESSAGE_PREFIX)){
+                    System.out.println(s.substring(MESSAGE_PREFIX.length()));
+
+                } else if (s.equals(GAME_OVER)) {
                     break;
                 }
-                out.println(userInput);
-              //  System.out.println("server: " + in.readLine());
             }
 
-            /** Closing all the resources */
             out.close();
             in.close();
             stdIn.close();

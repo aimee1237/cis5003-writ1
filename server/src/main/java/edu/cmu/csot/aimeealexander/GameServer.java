@@ -9,10 +9,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
 
 public class GameServer {
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, BrokenBarrierException, InterruptedException {
 
         int serverPort = Server.DEFAULT_PORT_NUMBER;
         String inputFile = "";
@@ -29,28 +31,35 @@ public class GameServer {
         //Read the game-script
         QuestionBank questionBank = loadQuestionBank(inputFile);
 
-        if (questionBank!=null && questionBank.getPlayers() > 0 && questionBank.getQuestions().size()>0 ) {
+
+        if (questionBank != null && questionBank.getPlayers() > 0 && questionBank.getQuestions().size() > 0) {
+
+            final CyclicBarrier cyclicBarrier = new CyclicBarrier(questionBank.getPlayers() + 1);
+
             ServerSocket serverSocket = null;
             try {
                 serverSocket = new ServerSocket(serverPort);
                 int connectedPlayers = 0;
 
+
                 List<Server> serverConnections = new ArrayList<>();
-                System.out.println("-> This game has " +  questionBank.getQuestions().size() +" questions for " + questionBank.getPlayers() +" players");
+                System.out.println("-> This game has " + questionBank.getQuestions().size() + " questions for " + questionBank.getPlayers() + " players");
                 while (connectedPlayers < questionBank.getPlayers()) {
                     // Creates a new SocketServer object for each connection this will allow multiple client connections
                     Socket socket = serverSocket.accept();
-                    Server server = new Server(socket);
+                    Server server = new Server(socket, cyclicBarrier);
 
                     serverConnections.add(server);
                     connectedPlayers += 1;
                     System.out.println("--> " + connectedPlayers + " of " + questionBank.getPlayers() + " players connected from " + socket.getInetAddress().getHostAddress());
                 }
 
+
+                //Waits for all threads to catch-up
+                cyclicBarrier.await();
+
                 System.out.println("\n-> Starting game");
-                //for (Server clientConnection : serverConnections) {
-                //    clientConnection.start();
-               // }
+
 
             } catch (IOException ex) {
                 System.out.println("Failed to start server");
