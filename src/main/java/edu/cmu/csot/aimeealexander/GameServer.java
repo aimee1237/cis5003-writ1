@@ -83,7 +83,7 @@ public class GameServer {
                 //Capture the top scorers
                 String topScorers = "";
                 for (Server s: lll){
-                    topScorers = topScorers + s.getPlayer().getFirstName() + " " + s.getPlayer().getLastName() + ",age " + s.getPlayer().getAge() + "\n";
+                    topScorers = topScorers + s.getPlayer().getFirstName() + " " + s.getPlayer().getLastName() + ", age " + s.getPlayer().getAge() + "\n";
                 }
 
 

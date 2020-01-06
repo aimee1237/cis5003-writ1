@@ -16,3 +16,14 @@ dependencies {
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.10.1'
     compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-paranamer', version: '2.10.1'
 }
+
+
+jar {
+    manifest {
+        attributes "Main-Class": "edu.cmu.csot.aimeealexander.GameServer"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

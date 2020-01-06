@@ -22,7 +22,7 @@ public class QuestionTests {
     public void serialiseToXml() {
 
         //Question#1
-        Set<Answer> questionOneOptions = new TreeSet();
+        TreeSet<Answer> questionOneOptions = new TreeSet();
         questionOneOptions.add(new Answer(1, "Biro Brothers"));
         questionOneOptions.add(new Answer(2, "Waterman Brothers"));
         questionOneOptions.add(new Answer(3, "Bicc Brothers"));
@@ -30,7 +30,7 @@ public class QuestionTests {
         Question questionOne = new Question(1, "Who invented the Ballpoint Pen?", 1, questionOneOptions);
 
         //Question#2
-        Set<Answer> questionTwoOptions = new TreeSet();
+        TreeSet<Answer> questionTwoOptions = new TreeSet();
         questionTwoOptions.add(new Answer(1, "1950s"));
         questionTwoOptions.add(new Answer(2, "1960s"));
         questionTwoOptions.add(new Answer(3, "1970s"));
@@ -38,7 +38,7 @@ public class QuestionTests {
         Question questionTwo = new Question(2, "In which decade was the first solid state integrated circuit demonstrated?", 1, questionTwoOptions);
 
         //Question#3
-        Set<Answer> questionThreeOptions = new TreeSet();
+        TreeSet<Answer> questionThreeOptions = new TreeSet();
         questionThreeOptions.add(new Answer(1, "Isaac Newton"));
         questionThreeOptions.add(new Answer(2, "Albert Einstein"));
         questionThreeOptions.add(new Answer(3, "Benjamin Franklin"));
@@ -46,7 +46,7 @@ public class QuestionTests {
         Question questionThree = new Question(3, "Which scientist discovered the radioactive element radium?", 4, questionThreeOptions);
 
         //QuestionBank
-        Set<Question> questions = new TreeSet<>();
+        TreeSet<Question> questions = new TreeSet<>();
         questions.add(questionOne);
         questions.add(questionTwo);
         questions.add(questionThree);
