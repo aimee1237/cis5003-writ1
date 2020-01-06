@@ -1,4 +1,3 @@
 rootProject.name = 'cis5003-writ1'
-include 'server'
-include 'client'
+
 

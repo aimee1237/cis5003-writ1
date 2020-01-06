@@ -1,8 +1,5 @@
 package edu.cmu.csot.aimeealexander.server.actions;
 
-import edu.cmu.csot.aimeealexander.gamescript.Answer;
-import edu.cmu.csot.aimeealexander.gamescript.Question;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
