@@ -27,7 +27,6 @@ public class Client {
                 echoSocket = new Socket(serverHostname, 8081);
                 out = new PrintWriter(echoSocket.getOutputStream(), true);
                 in = new ObjectInputStream(echoSocket.getInputStream());
-                //in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
             } catch (UnknownHostException e) {
                 System.err.println("Unknown host: " + serverHostname);
                 System.exit(1);

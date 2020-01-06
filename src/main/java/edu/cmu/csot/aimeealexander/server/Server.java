@@ -15,7 +15,12 @@ public class Server extends Thread {
     protected Socket socket;
 
     protected final CyclicBarrier cyclicBarrier;
-    protected  final QuestionBank questionBank;
+    protected final QuestionBank questionBank;
+    protected Player player;
+
+    InputStream in = null;
+    OutputStream out = null;
+    ObjectOutputStream oos = null;
 
     public Server(Socket socket, CyclicBarrier cyclicBarrier, QuestionBank questionBank) throws IOException {
         this.socket = socket;
@@ -25,9 +30,6 @@ public class Server extends Thread {
     }
 
     public void run() {
-        InputStream in = null;
-        OutputStream out = null;
-        ObjectOutputStream oos = null;
 
         try {
             in = socket.getInputStream();
@@ -35,46 +37,52 @@ public class Server extends Thread {
             oos = new ObjectOutputStream(out);
 
             //Initial greeting to the player
-            sendSimpleMessage(oos,new SimpleMessageAction("Welcome to the GAME.  This game will be for " + questionBank.getPlayers() + "player(s)"));
+            sendSimpleMessage(new SimpleMessageAction("Welcome to the GAME.  This game will be for " + questionBank.getPlayers() + " player(s)"));
 
             //Capture the players details
             ClientAction firstNameAction = new SimpleQuestionAction("Enter your first name:");
-            String firstName = sendMessageAndGetResponse(in,oos,firstNameAction);
+            String firstName = sendMessageAndGetResponse(firstNameAction);
 
             ClientAction lastNameAction = new SimpleQuestionAction("Enter your last name:");
-            String lastName = sendMessageAndGetResponse(in,oos,lastNameAction);
+            String lastName = sendMessageAndGetResponse(lastNameAction);
 
             ClientAction ageAction = new SimpleQuestionAction("Enter your age:");
-            String age = sendMessageAndGetResponse(in,oos,ageAction);
+            String age = sendMessageAndGetResponse(ageAction);
 
-            Player player = new Player(firstName,lastName, Integer.valueOf(age));
+            player = new Player(firstName, lastName, Integer.valueOf(age));
 
             //Wait for all clients to get to this point before starting the game
-            if (cyclicBarrier.getNumberWaiting() < cyclicBarrier.getParties()-1){
+            if (cyclicBarrier.getNumberWaiting() < cyclicBarrier.getParties() - 1) {
+                sendSimpleMessage(new SimpleMessageAction("Waiting for other players to get to join before starting game"));
                 cyclicBarrier.await();
-                sendSimpleMessage(oos,new SimpleMessageAction("Waiting for other players to get to join before starting game"));
             }
 
-            sendSimpleMessage(oos,new SimpleMessageAction("\n++ Starting the game ++\n"));
-
+            //Start the game
+            sendSimpleMessage(new SimpleMessageAction("\n++ Starting the game ++\n"));
 
             //Send the game questions and options
-            for (Question question:questionBank.getQuestions()){
+            for (Question question : questionBank.getQuestions()) {
                 ClientAction questionBankAction = new QuestionBankAction(question);
-                String response = sendMessageAndGetResponse(in,oos,questionBankAction);
+                String response = sendMessageAndGetResponse(questionBankAction);
 
                 //Record the result
-                player.getAnswers().put(question.getId(),Integer.valueOf(response) );
-                if (Integer.valueOf(response) == question.getAnswerId()){
-                    player.setScore(player.getScore()+1);
+                player.getAnswers().put(question.getId(), Integer.valueOf(response));
+                if (Integer.valueOf(response) == question.getAnswerId()) {
+                    player.setScore(player.getScore() + 1);
                 }
             }
 
-            sendSimpleMessage(oos, new SimpleMessageAction("You scored " + player.getScore() +
+            sendSimpleMessage(new SimpleMessageAction("You scored " + player.getScore() +
                     " out of " + questionBank.getQuestions().size()));
 
+            //Wait for all clients to finish
+            cyclicBarrier.await();
+
+            //Wait for the server to send the winner
+            cyclicBarrier.await();
+
             //Disconnect the client from the game
-            sendSimpleMessage(oos, new EndGameAction());
+            sendSimpleMessage(new EndGameAction());
 
         } catch (IOException | InterruptedException | BrokenBarrierException e) {
             System.out.println("Unable to get streams from client");
@@ -90,15 +98,18 @@ public class Server extends Thread {
         }
     }
 
-    private void sendSimpleMessage(ObjectOutputStream oos, ClientAction action) throws IOException {
+    public void sendSimpleMessage(ClientAction action) throws IOException {
         oos.writeObject(action);
     }
 
-    private String sendMessageAndGetResponse(InputStream in, ObjectOutputStream oos, ClientAction action) throws IOException {
+    public String sendMessageAndGetResponse(ClientAction action) throws IOException {
         oos.writeObject(action);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String response = br.readLine();
         return response;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
 }
