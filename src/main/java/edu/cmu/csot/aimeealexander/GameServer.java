@@ -29,11 +29,16 @@ public class GameServer {
             inputFile = args[0];
             serverPort = Integer.valueOf(args[1]);
         } else {
+            System.out.println("Invalid arguments\n filename [port number]");
             System.exit(1);
         }
 
         //Read the game-script
         QuestionBank questionBank = loadQuestionBank(inputFile);
+        if (questionBank ==null){
+            System.out.println("The file doesnt exist or is not readable");
+            System.exit(1);
+        }
 
 
         if (questionBank != null && questionBank.getPlayers() > 0 && questionBank.getQuestions().size() > 0) {
@@ -120,10 +125,15 @@ public class GameServer {
         }
     }
 
+
     private static QuestionBank loadQuestionBank(String inputFile) throws IOException {
         String gameScriptXml = readGameScript(inputFile);
-        XmlMapper xmlMapper = new XmlMapper();
-        return xmlMapper.readValue(gameScriptXml, QuestionBank.class);
+        if (gameScriptXml == null){
+            return null;
+        }else{
+            XmlMapper xmlMapper = new XmlMapper();
+            return xmlMapper.readValue(gameScriptXml, QuestionBank.class);
+        }
     }
 
 
