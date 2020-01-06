@@ -1,4 +1,4 @@
-package edu.cmu.csot.aimeealexander.client;
+package edu.cmu.csot.aimeealexander;
 
 import edu.cmu.csot.aimeealexander.server.Server;
 import edu.cmu.csot.aimeealexander.server.actions.ClientAction;

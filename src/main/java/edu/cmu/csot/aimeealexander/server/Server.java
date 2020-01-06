@@ -1,6 +1,5 @@
 package edu.cmu.csot.aimeealexander.server;
 
-import edu.cmu.csot.aimeealexander.client.Client;
 import edu.cmu.csot.aimeealexander.gamescript.Question;
 import edu.cmu.csot.aimeealexander.gamescript.QuestionBank;
 import edu.cmu.csot.aimeealexander.player.Player;
